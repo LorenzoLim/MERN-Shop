@@ -11,6 +11,9 @@ const app = express()
 app.use(bodyParser.json()) // Allow JSON uploads (POST/PUT)
 
 // Routes
+app.use([
+  require('./routes/products')
+])
 
 app.use((error, req, res, next) => {
   res.send({ errpr: error.message });
