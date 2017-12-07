@@ -1,21 +1,21 @@
 const express = require('express');
-const Product = require('../models/Product');
+const Store = require('../models/Store');
 const { requireJWT } = require('../middleware/auth')
 
 const router = new express.Router();
 
-router.get('/products', requireJWT, (req, res) => {
-  Product.find().then((products) => {
-    res.send(products)
+router.get('/stores', requireJWT, (req, res) => {
+  Store.find().then((stores) => {
+    res.send(stores)
   })
   .catch((error) => {
     res.status(500).send({ error: error.message })
   })
 })
 
-router.get('/products/:id', requireJWT, (req, res) => {
-  Product.findById(req.params.id).then((product) => {
-    res.send(product)
+router.get('/stores/:id', requireJWT, (req, res) => {
+  Store.findById(req.params.id).then((store) => {
+    res.send(store)
   })
   .catch((error) => {
     res.status(500).send({ error: error.message })

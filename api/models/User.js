@@ -1,9 +1,10 @@
 const mongoose = require('./init')
-const passportLocalMongoose = reuire('passport-local-mongoose')
+const passportLocalMongoose = require('passport-local-mongoose')
 
-const userSchema = new mongoose.schema({
-  firstName: string,
-  lastName: string
+const userSchema = new mongoose.Schema({
+  firstName: String,
+  lastName: String,
+  role: String
 })
 
 userSchema.plugin(passportLocalMongoose, {
@@ -12,8 +13,6 @@ userSchema.plugin(passportLocalMongoose, {
   session: false // We'll use JWT
 })
 
-const User = mongoose.model('User', {
-
-})
+const User = mongoose.model('User', userSchema)
 
 module.exports = User
