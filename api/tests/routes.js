@@ -10,7 +10,7 @@ describe('Test routes', () => {
     request(app)
     .get('/nothing-to-see-here')
     .expect(404, done)
-  })
+  })  
   it('Should register a user', (done) => {
     request(app)
     .post('/auth/register')
