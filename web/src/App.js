@@ -31,7 +31,7 @@ class App extends Component {
     } catch (error) {
       console.log(error)
       alert('No good!')
-      // const name = prompt('What is your name?')  
+      // const name = prompt('What is your name?') 
       // alert('your name is ' + name)
       this.setState({
         loginError: error
