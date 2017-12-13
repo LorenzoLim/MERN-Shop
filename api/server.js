@@ -5,6 +5,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 const cors = require('cors')
 const express = require('express')
+const port = process.env.PORT || 7000;
 const bodyParser = require('body-parser')
 const { initialize, requireJWT, verifyAdmin } = require('./middleware/auth')
 
@@ -36,11 +37,11 @@ app.use((req, res, next) => {
   })
 })
 
-app.listen(7000, (error) => {
+app.listen(port, (error) => {
   if (error) {
     console.log('There was a problem starting the server', error)
   } else {
-    console.log('Server is listening on http://localhost:7000/')
+    console.log(`Server is listening on port: ${port} `)
   }
 })
 
