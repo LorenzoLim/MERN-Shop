@@ -23,7 +23,7 @@ class App extends Component {
       this.setState({
         token: response.data.token
       })
-
+        
       setJwt(response.data.token)
 
       localStorage.setItem('token', response.data.token)
