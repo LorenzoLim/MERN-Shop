@@ -9,7 +9,7 @@ class App extends Component {
     token: localStorage.getItem('token'),
     loginError: null
   }
-      
+  
   handleSignIn = async (event) => {
     event.preventDefault()
     const form = event.target
