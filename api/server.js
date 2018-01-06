@@ -8,7 +8,7 @@ const express = require('express')
 const port = process.env.PORT || 7000;
 const bodyParser = require('body-parser')
 const { initialize, requireJWT, verifyAdmin } = require('./middleware/auth')
- 
+
 const app = express()
 
 // Plugins
