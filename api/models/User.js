@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
   lastName: String,
   role: String
 })
-
+ 
 userSchema.plugin(passportLocalMongoose, {
   usernameField: 'email', // Use email not username
   usernameLowerCase: true, // Treat emails as case-insensitive
