@@ -15,7 +15,7 @@ class App extends Component {
     const form = event.target
     const elements = form.elements
     try {
- 
+
       const response = await api.post('/auth', {
         email: elements.email.value,
         password: elements.password.value
